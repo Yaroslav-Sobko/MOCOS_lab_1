@@ -58,7 +58,7 @@ def fourier_series(x, n, k_max, a_coeffs, b_coeffs):
 
 
 # побудова графіку
-x_vals = np.linspace(-3*np.pi, 3*np.pi, 500)
+x_vals = np.linspace(-np.pi, np.pi, 500)
 y_vals = [f(x, n) for x in x_vals]
 y_series_vals = [fourier_series(x, n, k_max, a_coeffs, b_coeffs) for x in x_vals]
 
@@ -126,9 +126,16 @@ save_results_to_files(a_coeffs, b_coeffs, n, k_max, rel_error)
 
 # побудова графіку
 
-
+x_vals_2 = np.linspace(-3*np.pi, -np.pi, 500)
+x_vals_3 = np.linspace(np.pi, 3*np.pi, 500)
+#y_vals = [f(x, n) for x in x_vals]
+y_series_vals = [fourier_series(x, n, k_max, a_coeffs, b_coeffs) for x in x_vals]
 plt.plot(x_vals, y_vals, label='f(x)', color="red")
+plt.plot(x_vals_2, y_vals, color="red")
+plt.plot(x_vals_3, y_vals, color="red")
 plt.plot(x_vals, y_series_vals, label=f'Fourier series, N={k_max}', color="green")
+plt.plot(x_vals_2, y_series_vals, color="green")
+plt.plot(x_vals_3, y_series_vals, color="green")
 
 plt.xlabel('x')
 plt.ylabel('y')

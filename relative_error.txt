@@ -1,1 +1,1 @@
-Relative error:	0.99895035
+Relative error:	0.02913163
